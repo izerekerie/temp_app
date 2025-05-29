@@ -132,30 +132,43 @@ class _ConverterPageState extends State<ConverterPage> {
     );
   }
 
-  Widget buildLandscape() {
-    return Padding(
-      padding: EdgeInsets.all(20),
-      child: Row(
-        children: [
-          Expanded(
-            child: inputCard('Celsius', '°C', CelController, Icons.ac_unit, Colors.blue),
-          ),
-          SizedBox(width: 20),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+Widget buildLandscape() {
+  return Padding(
+    padding: EdgeInsets.all(20),
+    child: Column(
+      children: [
+        Expanded(
+          child: Row(
             children: [
+              Expanded(
+                child: inputCard('Celsius', '°C', CelController, Icons.ac_unit, Colors.blue),
+              ),
+              SizedBox(width: 20),
               Icon(Icons.swap_horiz, size: 40, color: const Color.fromARGB(255, 236, 95, 13)),
+              SizedBox(width: 20),
+              Expanded(
+                child: inputCard('Fahrenheit', '°F', fahController, Icons.wb_sunny, Colors.orange),
+              ),
             ],
           ),
-          SizedBox(width: 20),
-          Expanded(
-            child: inputCard('Fahrenheit', '°F', fahController, Icons.wb_sunny, Colors.orange),
+        ),
+        SizedBox(height: 20),
+        SizedBox(
+          width: double.infinity,
+          child: ElevatedButton(
+            onPressed: clearFields,
+            child: Text('Clear All',
+              style: TextStyle(fontSize: 18, color: Colors.redAccent, fontWeight: FontWeight.bold),
+            ),
+            style: ElevatedButton.styleFrom(
+              padding: EdgeInsets.symmetric(vertical: 15),
+            ),
           ),
-        ],
-      ),
-    );
-  }
-
+        ),
+      ],
+    ),
+  );
+}
   @override
   void dispose() {
     // Remove listeners before disposing
