@@ -128,6 +128,7 @@ class _ConverterPageState extends State<ConverterPage> {
       child: Column(
         children: [
           SizedBox(height: 20),
+          // celcius inpt card
           inputCard('Celsius', '°C', CelController, Icons.ac_unit, Colors.blue),
           SizedBox(height: 30),
           // Clickable Convert Icon
@@ -151,6 +152,7 @@ class _ConverterPageState extends State<ConverterPage> {
             ),
           ),
           SizedBox(height: 30),
+          //F input card
           inputCard('Fahrenheit', '°F', fahController, Icons.wb_sunny, Colors.orange),
           SizedBox(height: 40),
           SizedBox(
