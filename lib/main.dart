@@ -2,10 +2,12 @@
 import 'package:flutter/material.dart';
 import 'screens/convertPage.dart';
 void main() {
-  runApp(TemperatureApp());
+  runApp(MyApp());
 }
 
-class TemperatureApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
